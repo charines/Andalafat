@@ -1,0 +1,49 @@
+--- PACKAGE JSON ---
+{
+  "name": "andalafat---50-automações",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "@google/genai": "^1.41.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
+
+--- ESTRUTURA DE PASTAS ---
+Permissions Size User           Date Modified Name
+drwxrwxr-x     - dsktop-cwmlq04 12 Feb 02:48  components
+.rw-rw-r--  1.7k dsktop-cwmlq04 12 Feb 02:48  App.tsx
+.rw-rw-r--  8.5k dsktop-cwmlq04 12 Feb 02:48  constants.ts
+.rw-rw-r--  2.2k dsktop-cwmlq04 11 Feb 23:55  index.html
+.rw-rw-r--   351 dsktop-cwmlq04 12 Feb 02:48  index.tsx
+.rw-rw-r--   234 dsktop-cwmlq04 12 Feb 02:48  metadata.json
+.rw-rw-r--   505 dsktop-cwmlq04 12 Feb 00:00  out.txt
+.rw-rw-r--   95k dsktop-cwmlq04 11 Feb 23:52  package-lock.json
+.rw-rw-r--   455 dsktop-cwmlq04 12 Feb 02:48  package.json
+.rw-rw-r--   520 dsktop-cwmlq04 12 Feb 02:48  README.md
+.rw-rw-r--   542 dsktop-cwmlq04 12 Feb 02:48  tsconfig.json
+.rw-rw-r--   302 dsktop-cwmlq04 12 Feb 02:48  types.ts
+.rw-rw-r--   580 dsktop-cwmlq04 12 Feb 02:48  vite.config.ts
+
+./components:
+Permissions Size User           Date Modified Name
+.rw-rw-r--  2.8k dsktop-cwmlq04 12 Feb 02:48  AutomationSection.tsx
+.rw-rw-r--  2.5k dsktop-cwmlq04 12 Feb 02:48  Benefits.tsx
+.rw-rw-r--  1.2k dsktop-cwmlq04 12 Feb 02:48  CategoryNav.tsx
+.rw-rw-r--  4.2k dsktop-cwmlq04 12 Feb 02:48  Footer.tsx
+.rw-rw-r--  4.5k dsktop-cwmlq04 12 Feb 02:48  GeminiExpert.tsx
+.rw-rw-r--  1.6k dsktop-cwmlq04 12 Feb 02:48  Header.tsx
+.rw-rw-r--  2.4k dsktop-cwmlq04 12 Feb 02:48  Hero.tsx
