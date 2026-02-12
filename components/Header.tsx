@@ -11,14 +11,19 @@ const Header: React.FC = () => {
           </div>
           <span className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Andalafat</span>
         </div>
-        
+
         <div className="hidden md:flex items-center space-x-8">
           <a className="hover:text-primary transition-colors font-medium text-sm lg:text-base" href="#hero">Início</a>
           <a className="hover:text-primary transition-colors font-medium text-sm lg:text-base" href="#automations">Automações</a>
           <a className="hover:text-primary transition-colors font-medium text-sm lg:text-base" href="#benefits">Benefícios</a>
-          <button className="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 text-sm">
+          <a
+            href="https://wa.me/5511937054645?text=%23tenho%20interesse%2C%20quero%20escolher%205%20automacoes%20e%20iniciar%20imediatamente."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 text-sm"
+          >
             Começar Agora
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Icon */}
