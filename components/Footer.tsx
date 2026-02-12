@@ -1,7 +1,11 @@
 
 import React from 'react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onStartClick?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onStartClick }) => {
   return (
     <footer className="bg-background-light dark:bg-background-dark pt-20 pb-10 border-t border-slate-200 dark:border-slate-800">
       <div className="container mx-auto px-6">
@@ -25,7 +29,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-16">
             <div>
               <h4 className="font-bold text-slate-900 dark:text-white mb-6">Categorias</h4>
@@ -46,16 +50,19 @@ const Footer: React.FC = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-primary/5 border border-primary/10 max-w-sm w-full">
             <h4 className="font-bold text-slate-900 dark:text-white mb-2">Pronto para automatizar?</h4>
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Junte-se à Andalafat e aproveite nossa tecnologia para seu portfólio.</p>
-            <button className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/10">
+            <button
+                id="contato-card"
+                onClick={onStartClick}
+                className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/10">
               Solicitar Demonstração
             </button>
           </div>
         </div>
-        
+
         <div className="pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-slate-400 uppercase tracking-widest">
           <p>© 2024 Andalafat Serviços Financeiros. Todos os direitos reservados.</p>
           <p>Desenvolvido com precisão para o mercado moderno.</p>

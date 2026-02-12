@@ -17,16 +17,17 @@ const Hero: React.FC = () => {
             As 50 Automações que <span className="text-primary">Escalam sua Eficiência</span>
           </h1>
 
-          <div className="mt-8 flex flex-col items-center gap-2">
+          <div className="mt-16 flex flex-col items-center gap-2">
             <p className="text-primary text-xl md:text-2xl font-bold uppercase tracking-widest animate-bounce">
-              ↓ Selecione 7 Automações ↓
+              <a href="#automations">↓ Selecione 7 Automações ↓</a>
+
             </p>
             <div className="h-1 w-20 bg-primary rounded-full"></div>
           </div>
 
           <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto mt-12">
-            E se a Andalafat utilizar automação de nível institucional em todo o ciclo financeiro imobiliário.
-            Analise abaixo 50 sugestoes de automação e veja como eliminamos o atrito manual.
+            Que tal utilizar automação de nível institucional em todo o ciclo financeiro imobiliário.
+            50 sugestoes de automação e veja como eliminamos o atrito manual.
           </p>
 
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 md:mt-16 border-t border-slate-200 dark:border-slate-800 pt-12">

@@ -1,7 +1,10 @@
-
 import React from 'react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onStartClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onStartClick }) => {
   return (
     <header className="bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 border-b border-primary/10">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -16,20 +19,25 @@ const Header: React.FC = () => {
           <a className="hover:text-primary transition-colors font-medium text-sm lg:text-base" href="#hero">Início</a>
           <a className="hover:text-primary transition-colors font-medium text-sm lg:text-base" href="#automations">Automações</a>
           <a className="hover:text-primary transition-colors font-medium text-sm lg:text-base" href="#benefits">Benefícios</a>
-          <a
-            href="https://wa.me/5511937054645?text=%23tenho%20interesse%2C%20quero%20escolher%205%20automacoes%20e%20iniciar%20imediatamente."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 text-sm"
+
+          {/* BOTÃO ATUALIZADO COM A NOVA LÓGICA */}
+          <button
+            onClick={onStartClick}
+            className="bg-primary text-white px-6 py-2.5 rounded-lg font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 text-sm active:scale-95"
           >
             Começar Agora
-          </a>
+          </button>
         </div>
 
-        {/* Mobile Menu Icon */}
-        <button className="md:hidden text-slate-600 dark:text-slate-300">
-          <span className="material-icons">menu</span>
-        </button>
+        {/* Menu Mobile - Também atualizado */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={onStartClick}
+            className="p-2 text-primary"
+          >
+            <span className="material-icons">whatsapp</span>
+          </button>
+        </div>
       </nav>
     </header>
   );

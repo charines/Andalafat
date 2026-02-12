@@ -11,10 +11,10 @@ import { SECTIONS } from './constants';
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('comercial');
 
-  // NOVO: Estado global de seleções centralizado aqui
+  // Estado global de seleções centralizado
   const [selecionados, setSelecionados] = useState<string[]>([]);
 
-  // NOVO: Função de controle global (limite de 7 total)
+  // Função de controle global (limite de 7 total)
   const toggleGlobalSelection = (title: string) => {
     setSelecionados((prev) => {
       if (prev.includes(title)) {
@@ -22,10 +22,36 @@ const App: React.FC = () => {
       }
       if (prev.length >= 7) {
         alert("Você já escolheu o limite máximo de 7 automações no total.");
+        // Pequeno atraso para a rolagem funcionar após o fechamento do alert
+        setTimeout(() => {
+          const element = document.getElementById('contato-card');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
         return prev;
       }
       return [...prev, title];
     });
+  };
+
+  // LÓGICA DE ENVIO PARA O WHATSAPP
+  const handleWhatsApp = () => {
+    const phoneNumber = "5511937054645";
+
+    if (selecionados.length === 0) {
+      // Mensagem padrão caso nada esteja selecionado
+      const msgPadrao = encodeURIComponent("Olá! Tenho interesse nas automações da Andalafat e gostaria de saber mais.");
+      window.open(`https://wa.me/${phoneNumber}?text=${msgPadrao}`, "_blank");
+    } else {
+      // Mensagem dinâmica com os títulos selecionados
+      const saudacao = "Olá! Tenho interesse, vamos iniciar com:";
+      const listaItens = selecionados.map(item => `%0A• *${item}*`).join('');
+      const fechamento = "%0A%0AQuero iniciar imediatamente!";
+
+      const mensagemFinal = `${saudacao}${listaItens}${fechamento}`;
+      window.open(`https://wa.me/${phoneNumber}?text=${mensagemFinal}`, "_blank");
+    }
   };
 
   useEffect(() => {
@@ -50,10 +76,12 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header onStartClick={handleWhatsApp}/>
 
       <main className="flex-grow">
-        <Hero />
+        {/* Passando a nova função para o Hero */}
+        <Hero  />
+
         <CategoryNav activeSection={activeSection} sections={SECTIONS} />
 
         <div id="automations" className="space-y-0">
@@ -61,8 +89,8 @@ const App: React.FC = () => {
             <AutomationSection
               key={section.id}
               section={section}
-              selecionados={selecionados} // Passa a lista global
-              onToggle={toggleGlobalSelection} // Passa a função de clique
+              selecionados={selecionados}
+              onToggle={toggleGlobalSelection}
             />
           ))}
         </div>
@@ -70,8 +98,7 @@ const App: React.FC = () => {
         <Benefits />
       </main>
 
-      {/* Botão flutuante de WhatsApp opcional ou dentro do Footer/Hero */}
-      <Footer />
+      <Footer  onStartClick={handleWhatsApp}/>
       <GeminiExpert />
     </div>
   );
