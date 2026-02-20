@@ -44,7 +44,7 @@ const AutomationSection: React.FC<AutomationSectionProps> = ({ section, selecion
           </div>
           <div className="flex flex-col items-end">
              {/* Agora mostra o total global acumulado */}
-             <span className="text-primary font-bold text-sm mb-1">{selecionados.length}/7 total selecionado</span>
+             <span className="text-primary font-bold text-sm mb-1">{selecionados.length}/3 total selecionado</span>
              <span className="text-primary/20 font-mono text-4xl md:text-6xl font-black select-none">
               {section.index}
             </span>
