@@ -14,14 +14,14 @@ const App: React.FC = () => {
   // Estado global de seleções centralizado
   const [selecionados, setSelecionados] = useState<string[]>([]);
 
-  // Função de controle global (limite de 7 total)
+  // Função de controle global (limite de 3 total)
   const toggleGlobalSelection = (title: string) => {
     setSelecionados((prev) => {
       if (prev.includes(title)) {
         return prev.filter((t) => t !== title);
       }
-      if (prev.length >= 7) {
-        alert("Você já escolheu o limite máximo de 7 automações no total.");
+      if (prev.length >= 3) {
+        alert("Você já escolheu o limite máximo de 3 automações no total.");
         // Pequeno atraso para a rolagem funcionar após o fechamento do alert
         setTimeout(() => {
           const element = document.getElementById('contato-card');
@@ -41,7 +41,7 @@ const App: React.FC = () => {
 
     if (selecionados.length === 0) {
       // Mensagem padrão caso nada esteja selecionado
-      const msgPadrao = encodeURIComponent("Olá! Tenho interesse nas automações da Andalafat e gostaria de saber mais.");
+      const msgPadrao = encodeURIComponent("Olá! Tenho interesse nas automações e gostaria de saber mais.");
       window.open(`https://wa.me/${phoneNumber}?text=${msgPadrao}`, "_blank");
     } else {
       // Mensagem dinâmica com os títulos selecionados

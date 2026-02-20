@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ onStartClick }) => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="material-icons text-white text-sm">account_balance</span>
               </div>
-              <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Andalafat</span>
+              <span className="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">6ESSH</span>
             </div>
             <p className="text-slate-500 dark:text-slate-400 mb-8 leading-relaxed">
               Redefinindo o financiamento imobiliário através de tecnologia e automação. Precisão institucional na velocidade do mercado.
@@ -53,7 +53,7 @@ const Footer: React.FC<FooterProps> = ({ onStartClick }) => {
 
           <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-primary/5 border border-primary/10 max-w-sm w-full">
             <h4 className="font-bold text-slate-900 dark:text-white mb-2">Pronto para automatizar?</h4>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Junte-se à Andalafat e aproveite nossa tecnologia para seu portfólio.</p>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Junte-se à 6ESSH e aproveite nossa tecnologia para seu portfólio.</p>
             <button
                 id="contato-card"
                 onClick={onStartClick}
@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ onStartClick }) => {
         </div>
 
         <div className="pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-slate-400 uppercase tracking-widest">
-          <p>© 2024 Andalafat Serviços Financeiros. Todos os direitos reservados.</p>
+          <p>© 2026 6ESSH. Todos os direitos reservados.</p>
           <p>Desenvolvido com precisão para o mercado moderno.</p>
         </div>
       </div>

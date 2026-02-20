@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
           <div className="mt-16 flex flex-col items-center gap-2">
             <p className="text-primary text-xl md:text-2xl font-bold uppercase tracking-widest animate-bounce">
-              <a href="#automations">↓ Selecione 7 Automações ↓</a>
+              <a href="#automations">↓ Pra começar selecione 3 Automações ↓</a>
 
             </p>
             <div className="h-1 w-20 bg-primary rounded-full"></div>

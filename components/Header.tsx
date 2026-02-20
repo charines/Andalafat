@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ onStartClick }) => {
           <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
             <span className="material-icons text-white">account_balance</span>
           </div>
-          <span className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">Andalafat</span>
+          <span className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">6ESSH</span>
         </div>
 
         <div className="hidden md:flex items-center space-x-8">

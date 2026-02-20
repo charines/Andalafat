@@ -45,27 +45,6 @@ export const SECTIONS: SectionData[] = [
     ]
   },
   {
-    id: 'financeiro',
-    index: '03',
-    title: 'Financeiro e Administrativo',
-    subtitle: 'Gestão de precisão para a saúde financeira.',
-    navLabel: 'Financeiro e Adm',
-    navIcon: 'account_balance_wallet',
-    variant: 'light',
-    items: [
-      { icon: 'receipt_long', title: 'Faturamento Auto', description: 'Taxas de serviço geradas e enviadas no fechamento da transação.' },
-      { icon: 'account_tree', title: 'Conciliação Bancária', description: 'Reconciliação diária entre bancos e sistemas internos de contabilidade.' },
-      { icon: 'payments', title: 'API de Folha', description: 'Cálculos automáticos de comissões enviados para a folha de pagamento.' },
-      { icon: 'request_quote', title: 'Triagem de Despesas', description: 'Categorização por IA de gastos corporativos baseada em recibos.' },
-      { icon: 'trending_up', title: 'Previsão de Caixa', description: 'Projeções de fluxo de caixa de 12 meses atualizadas a cada hora.' },
-      { icon: 'account_balance', title: 'Provisão de Impostos', description: 'Acompanhamento em tempo real das obrigações fiscais por jurisdição.' },
-      { icon: 'assessment', title: 'Trilha de Auditoria', description: 'Logs imutáveis de cada decisão e mudança financeira efetuada.' },
-      { icon: 'monetization_on', title: 'Busca de Receita', description: 'Detecção automática de oportunidades de cobrança perdidas.' },
-      { icon: 'dashboard_customize', title: 'Relatórios Custom', description: 'Dashboards específicos para stakeholders gerados semanalmente.' },
-      { icon: 'credit_card_off', title: 'Escudo Antifraude', description: 'Reconhecimento de padrões para pagamentos de saída anômalos.' }
-    ]
-  },
-  {
     id: 'parcerias',
     index: '04',
     title: 'Parcerias e Incorporadoras',
