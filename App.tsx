@@ -52,6 +52,14 @@ const App: React.FC = () => {
     });
   };
 
+  // Função para rolar até o CTA de orientação
+  const scrollToCTA = () => {
+    const element = document.getElementById('cta-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   // LÓGICA DE ENVIO PARA O WHATSAPP
   const handleWhatsApp = () => {
     const phoneNumber = "5511937054645";
@@ -93,7 +101,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header onStartClick={handleWhatsApp} />
+      <Header onStartClick={scrollToCTA} />
 
       <main className="flex-grow">
         {/* Passando a nova função para o Hero */}
@@ -117,7 +125,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer onStartClick={handleWhatsApp} />
-      <GeminiExpert />
+      {/* <GeminiExpert /> */}
     </div>
   );
 };

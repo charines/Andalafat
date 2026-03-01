@@ -49,13 +49,28 @@ const CTASection: React.FC<CTASectionProps> = ({ selecionados, onStartClick }) =
                                 <div className="flex flex-col sm:flex-row items-center gap-4">
                                     <button
                                         onClick={onStartClick}
-                                        className="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/25 flex items-center justify-center gap-3 group"
+                                        disabled={!isComplete}
+                                        className={`w-full sm:w-auto px-10 py-5 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-3 group
+                                            ${isComplete
+                                                ? 'bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/25 cursor-pointer'
+                                                : 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed shadow-none'
+                                            }`}
                                     >
                                         <span>Falar com Soph.IA</span>
-                                        <span className="material-icons group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                        <span className={`material-icons ${isComplete ? 'group-hover:translate-x-1' : ''} transition-transform`}>arrow_forward</span>
                                     </button>
 
-                                    {selecionados.length > 0 && (
+                                    {!isComplete && (
+                                        <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 w-full animate-in fade-in slide-in-from-bottom-4 duration-700">
+                                            <p className="text-primary text-sm md:text-base font-bold uppercase tracking-widest animate-bounce text-center md:text-left">
+                                                <a href="#automations" className="flex items-center justify-center md:justify-start gap-2 hover:opacity-80 transition-opacity">
+                                                    <span>↑ Pra começar selecione 3 Automações ↑</span>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    )}
+
+                                    {isComplete && selecionados.length > 0 && (
                                         <div className="text-xs text-slate-400 flex flex-col sm:items-start items-center">
                                             <span className="font-semibold uppercase tracking-widest text-[10px] mb-1">Selecionados:</span>
                                             <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
