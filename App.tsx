@@ -5,6 +5,7 @@ import CategoryNav from './components/CategoryNav';
 import AutomationSection from './components/AutomationSection';
 import Benefits from './components/Benefits';
 import Footer from './components/Footer';
+import CTASection from './components/CTASection';
 import GeminiExpert from './components/GeminiExpert';
 import { SECTIONS } from './constants';
 
@@ -17,21 +18,37 @@ const App: React.FC = () => {
   // Função de controle global (limite de 3 total)
   const toggleGlobalSelection = (title: string) => {
     setSelecionados((prev) => {
+      // Se o item já está selecionado, removemos ele
       if (prev.includes(title)) {
         return prev.filter((t) => t !== title);
       }
+
+      // Se já temos 3 e o usuário tenta selecionar o 4º
       if (prev.length >= 3) {
-        alert("Você já escolheu o limite máximo de 3 automações no total.");
-        // Pequeno atraso para a rolagem funcionar após o fechamento do alert
         setTimeout(() => {
-          const element = document.getElementById('contato-card');
+          const element = document.getElementById('cta-section');
           if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }, 100);
         return prev;
       }
-      return [...prev, title];
+
+      // Novo estado com o item atualizado
+      const next = [...prev, title];
+
+      // Se acabou de atingir o limite de 3
+      if (next.length === 3) {
+        // Rola diretamente para o botão sem alert
+        setTimeout(() => {
+          const element = document.getElementById('cta-section');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 300); // Um pouco mais de delay para o usuário ver a marcação no card antes de rolar
+      }
+
+      return next;
     });
   };
 
@@ -76,11 +93,11 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header onStartClick={handleWhatsApp}/>
+      <Header onStartClick={handleWhatsApp} />
 
       <main className="flex-grow">
         {/* Passando a nova função para o Hero */}
-        <Hero  />
+        <Hero />
 
         <CategoryNav activeSection={activeSection} sections={SECTIONS} />
 
@@ -96,9 +113,10 @@ const App: React.FC = () => {
         </div>
 
         <Benefits />
+        <CTASection selecionados={selecionados} onStartClick={handleWhatsApp} />
       </main>
 
-      <Footer  onStartClick={handleWhatsApp}/>
+      <Footer onStartClick={handleWhatsApp} />
       <GeminiExpert />
     </div>
   );

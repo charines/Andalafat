@@ -51,16 +51,7 @@ const Footer: React.FC<FooterProps> = ({ onStartClick }) => {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl shadow-primary/5 border border-primary/10 max-w-sm w-full">
-            <h4 className="font-bold text-slate-900 dark:text-white mb-2">Pronto para automatizar?</h4>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">Junte-se à 6ESSH e aproveite nossa tecnologia para seu portfólio.</p>
-            <button
-                id="contato-card"
-                onClick={onStartClick}
-                className="w-full bg-primary text-white py-3 rounded-xl font-bold hover:bg-primary/90 transition-all shadow-md shadow-primary/10">
-              Solicitar Demonstração
-            </button>
-          </div>
+          {/* O CTA principal agora está na seção CTASection dedicada */}
         </div>
 
         <div className="pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-slate-400 uppercase tracking-widest">
